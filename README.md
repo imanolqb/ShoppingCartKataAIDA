@@ -7,6 +7,7 @@
 
 # Shopping Cart Kata
 > Developed by Imanol Benito Quintero Bermúdez
+
 > Exercise proposed by **Aplicaciones Informáticas Domingo Alonso (AIDA)** internship tutors as an intern in the Computer Engineering Degree at **ULPGC**
 
 This project is a **kata** for creating a Shopping Cart application for a store. It follows **best programming practices** and **Test-Driven Development (TDD)** techniques to iteratively build the product.
