@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartKata.Business", "ShoppingCartKata\ShoppingCartKata.Business.csproj", "{2AC675CA-6CB3-4BC3-9BC6-A96EBF39AE02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartKata.Business", "ShoppingCartKata\ShoppingCartKata.Business.csproj", "{2AC675CA-6CB3-4BC3-9BC6-A96EBF39AE02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartKata.Tests", "ShoppingCartKata.Tests\ShoppingCartKata.Tests.csproj", "{C355F00A-874C-4BCB-8984-FE118551DDF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCartKata.Tests", "ShoppingCartKata.Tests\ShoppingCartKata.Tests.csproj", "{C355F00A-874C-4BCB-8984-FE118551DDF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartKata.Printer", "ShoppingCartKata.Printer\ShoppingCartKata.Printer.csproj", "{EF2C3D5E-C6E0-481C-A59B-9542A35C8440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C355F00A-874C-4BCB-8984-FE118551DDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C355F00A-874C-4BCB-8984-FE118551DDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C355F00A-874C-4BCB-8984-FE118551DDF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2C3D5E-C6E0-481C-A59B-9542A35C8440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2C3D5E-C6E0-481C-A59B-9542A35C8440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2C3D5E-C6E0-481C-A59B-9542A35C8440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2C3D5E-C6E0-481C-A59B-9542A35C8440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
