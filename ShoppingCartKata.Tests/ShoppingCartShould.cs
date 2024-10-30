@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Reflection.Metadata.Ecma335;
+using FluentAssertions;
 using NUnit.Framework;
 using ShoppingCartKata.Business;
 
@@ -28,38 +29,38 @@ namespace ShoppingCartKata.Tests
         {
             var product = new Product(name, price, 0, 0);
 
-            shoppingCart.AddItem(product);
+            shoppingCart.AddItem(product, 1);
 
-            shoppingCart.Items.Should().Contain(element => element.Name == name && element.Price == price);
+            shoppingCart.Items.Should().Contain(element => element.Key.Name == name && element.Key.Price == price);
+        }
+
+        [Test]
+        public void Return_total_amount_of_lettuces_given_four_lettuces()
+        {
+            shoppingCart.AddItem(product1, 4);
+
+            var result = shoppingCart.Items[product1];
+
+            result.Should().Be(4);
         }
 
         [Test]
         public void Return_total_amount_when_products_are_passed()
         {
-            shoppingCart.AddItem(product1);
-            shoppingCart.AddItem(product2);
-            shoppingCart.AddItem(product3);
+            shoppingCart.AddItem(product1, 3);
+            shoppingCart.AddItem(product2, 5);
+            shoppingCart.AddItem(product3, 9);
 
             var result = shoppingCart.TotalAmountOfProducts();
 
-            result.Should().Be(3);
-        }
-
-        [Test]
-        public void Return_total_price_when_lettuce_is_passed()
-        {
-            shoppingCart.AddItem(product1);
-
-            var result = shoppingCart.TotalPrice();
-
-            result.Should().Be(2.17);
+            result.Should().Be(17);
         }
 
         [Test]
         public void Return_total_price_when_lettuce_and_tomato_are_passed()
         {
-            shoppingCart.AddItem(product1);
-            shoppingCart.AddItem(product2);
+            shoppingCart.AddItem(product1, 1);
+            shoppingCart.AddItem(product2, 1);
 
             var result = shoppingCart.TotalPrice();
 
@@ -67,11 +68,22 @@ namespace ShoppingCartKata.Tests
         }
 
         [Test]
+        public void Return_total_price_when_lettuce_and_chicken_are_passed()
+        {
+            shoppingCart.AddItem(product1, 1);
+            shoppingCart.AddItem(product3, 1);
+
+            var result = shoppingCart.TotalPrice();
+
+            result.Should().Be(4.0);
+        }
+
+        [Test]
         public void Return_total_price_when_lettuce_tomato_and_chicken_are_passed()
         {
-            shoppingCart.AddItem(product1);
-            shoppingCart.AddItem(product2);
-            shoppingCart.AddItem(product3);
+            shoppingCart.AddItem(product1, 1);
+            shoppingCart.AddItem(product2, 1);
+            shoppingCart.AddItem(product3, 1);
 
             var result = shoppingCart.TotalPrice();
 

@@ -4,26 +4,38 @@ namespace ShoppingCartKata.Business
 {
     public class ShoppingCart
     {
-        public List<Product> Items { get; set; }
+        public Dictionary<Product, int> Items { get; set; }
 
         public ShoppingCart()
         {
-            Items = new List<Product>();
+            Items = new Dictionary<Product, int>();
         }
 
-        public void AddItem(Product product)
+        public void AddItem(Product product, int amount = 1)
         {
-            Items.Add(product);
+            if (Items.ContainsKey(product))
+            {
+                Items[product] += amount;
+            }
+            else
+            {
+                Items.Add(product, amount);
+            }
+        }
+
+        public int TotalAmountOfOneProduct(Product product)
+        {
+            return Items.GetValueOrDefault(product, 0);
         }
 
         public int TotalAmountOfProducts()
         {
-            return Items.Count;
+            return Items.Sum(item => item.Value);
         }
 
         public double TotalPrice()
         {
-            return Items.Sum(item => item.CalculateFinalPrice());
+            return Items.Sum(item => item.Key.CalculateFinalPrice());
         }
     }
 }
