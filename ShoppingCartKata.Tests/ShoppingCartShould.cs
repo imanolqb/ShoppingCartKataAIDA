@@ -35,13 +35,15 @@ namespace ShoppingCartKata.Tests
         }
 
         [Test]
-        public void Return_total_amount_of_lettuces_given_four_lettuces()
+        public void Return_total_amount_of_one_product_given_one_product()
         {
             shoppingCart.AddItem(product1, 4);
+            shoppingCart.AddItem(product2, 5);
+            shoppingCart.AddItem(product3, 6);
 
-            var result = shoppingCart.Items[product1];
-
-            result.Should().Be(4);
+            shoppingCart.Items[product1].Should().Be(4);
+            shoppingCart.Items[product2].Should().Be(5);
+            shoppingCart.Items[product3].Should().Be(6);
         }
 
         [Test]
