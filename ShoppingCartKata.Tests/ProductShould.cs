@@ -34,19 +34,5 @@ namespace ShoppingCartKata.Tests
             product2.CalculateFinalPrice().Should().Be(0.73);
             product3.CalculateFinalPrice().Should().Be(1.83);
         }
-
-        /*
-        [Test]
-        public void Return_total_amount_when_a_lettuce_is_passed()
-        {
-            var shoppingCart = new ShoppingCart();
-            shoppingCart.AddItem(new Product("Lettuce", 1.55));
-
-            var result = shoppingCart.TotalPrice();
-
-            result.Should().Be(2.17);
-        }
-        */
-
     }
 }

@@ -44,5 +44,15 @@ namespace ShoppingCartKata.Tests
 
             result.Should().Be(3);
         }
+
+        [Test]
+        public void Return_total_price_when_lettuce_is_passed()
+        {
+            shoppingCart.AddItem(product1);
+
+            var result = shoppingCart.TotalPrice();
+
+            result.Should().Be(2.17);
+        }
     }
 }
