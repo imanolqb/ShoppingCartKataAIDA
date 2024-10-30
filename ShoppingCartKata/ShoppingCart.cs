@@ -30,7 +30,7 @@ namespace ShoppingCartKata.Business
 
         public int TotalAmountOfProducts()
         {
-            return Items.Sum(item => item.Value);
+            return Items.Sum(item => this.TotalAmountOfOneProduct(item.Key));
         }
 
         public double TotalPrice()
