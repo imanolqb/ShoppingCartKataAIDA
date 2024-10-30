@@ -4,6 +4,7 @@ using ShoppingCartKata.Business;
 
 namespace ShoppingCartKata.Tests
 {
+    [TestFixture]
     public class ProductShould
     {
         private Product product1;

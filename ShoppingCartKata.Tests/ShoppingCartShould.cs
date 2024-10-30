@@ -8,11 +8,17 @@ namespace ShoppingCartKata.Tests
     public class ShoppingCartShould
     {
         private ShoppingCart shoppingCart;
+        private Product product1;
+        private Product product2;
+        private Product product3;
 
         [SetUp]
         public void Setup()
         {
             shoppingCart = new ShoppingCart();
+            product1 = new Product("Lettuce", 1.55, 0.15, 0.21);
+            product2 = new Product("Tomato", 0.52, 0.15, 0.21);
+            product3 = new Product("Chicken", 1.34, 0.12, 0.21);
         }
 
         [TestCase("Lettuce", 1.55)]
@@ -30,9 +36,9 @@ namespace ShoppingCartKata.Tests
         [Test]
         public void Return_total_amount_when_products_are_passed()
         {
-            shoppingCart.AddItem(new Product("Lettuce", 1.55, 0, 0));
-            shoppingCart.AddItem(new Product("Tomato", 0.52, 0, 0));
-            shoppingCart.AddItem(new Product("Chicken", 1.34, 0, 0));
+            shoppingCart.AddItem(product1);
+            shoppingCart.AddItem(product2);
+            shoppingCart.AddItem(product3);
 
             var result = shoppingCart.TotalAmountOfProducts();
 
