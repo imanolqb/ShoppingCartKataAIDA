@@ -65,5 +65,17 @@ namespace ShoppingCartKata.Tests
 
             result.Should().Be(2.9);
         }
+
+        [Test]
+        public void Return_total_price_when_lettuce_tomato_and_chicken_are_passed()
+        {
+            shoppingCart.AddItem(product1);
+            shoppingCart.AddItem(product2);
+            shoppingCart.AddItem(product3);
+
+            var result = shoppingCart.TotalPrice();
+
+            result.Should().Be(4.73);
+        }
     }
 }

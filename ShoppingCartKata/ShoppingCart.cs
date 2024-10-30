@@ -23,8 +23,7 @@ namespace ShoppingCartKata.Business
 
         public double TotalPrice()
         {
-            if (TotalAmountOfProducts() == 1) return 2.17;
-            return 2.9;
+            return Items.Sum(item => item.CalculateFinalPrice());
         }
     }
 }
