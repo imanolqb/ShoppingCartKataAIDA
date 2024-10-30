@@ -29,7 +29,9 @@ namespace ShoppingCartKata.Business
 
         public double CalculateFinalPrice()
         {
-            throw new NotImplementedException();
+            double unitPrice = CalculateUnitPrice();
+            double finalPrice = unitPrice + (unitPrice * TaxRate);
+            return Math.Ceiling(finalPrice * 100) / 100;
         }
 
         public override bool Equals(object obj)

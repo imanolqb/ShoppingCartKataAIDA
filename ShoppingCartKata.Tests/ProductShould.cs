@@ -26,6 +26,14 @@ namespace ShoppingCartKata.Tests
             product3.CalculateUnitPrice().Should().Be(1.51);
         }
 
+        [Test]
+        public void Return_final_price_of_product_given_product()
+        {
+            product1.CalculateFinalPrice().Should().Be(2.17);
+            product2.CalculateFinalPrice().Should().Be(0.73);
+            product3.CalculateFinalPrice().Should().Be(1.83);
+        }
+
         /*
         [Test]
         public void Return_total_amount_when_a_lettuce_is_passed()
